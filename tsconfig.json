@@ -1,4 +1,7 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
-  "files": ["src/@types/styled.d.ts"]
+  "files": ["src/@types/styled.d.ts"],
+  "compilerOptions": {
+    
+  }
 }

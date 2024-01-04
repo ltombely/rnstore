@@ -9,17 +9,17 @@ const Drawer = createDrawerNavigator()
 
 export default function Router(){
 
-  const a = useContext(ThemeContext)
+  const appTheme = useContext(ThemeContext)
   return (
     <Drawer.Navigator screenOptions={{
       headerShown: false,
       drawerStyle: {
-        backgroundColor: a!.colors.background
+        backgroundColor: appTheme!.colors.background
         
       },
-      drawerInactiveTintColor: a!.colors.text,
-      drawerActiveTintColor: a!.colors.primary,
-      drawerActiveBackgroundColor: a!.colors.selected
+      drawerInactiveTintColor: appTheme!.colors.text,
+      drawerActiveTintColor: appTheme!.colors.primary,
+      drawerActiveBackgroundColor: appTheme!.colors.selected
     }}>
       <Drawer.Screen name='Home' component={Home}/>
       <Drawer.Screen name='Products' component={Products} />

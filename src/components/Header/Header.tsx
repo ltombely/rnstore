@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HeaderContainer } from './Header.styles';
-import { SmallLogo, Title } from '../../styles/global.styles';
-import { useAppStore } from '../../store';
 import ThemeToggler from '../ThemeToggler/ThemeToggler';
-
-import logo from '../../assets/logo.png';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { ThemeContext } from 'styled-components';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { TTheme } from '../../themes/light';
 
 export default function Header() {
-  const theme = useAppStore(state => state.theme);
-  const toggleTheme = useAppStore(state => state.toggleTheme);
+  const appTheme = useContext<TTheme>(ThemeContext as any);
+
+  const navigation = useNavigation();
 
   return (
     <HeaderContainer>
-      <SmallLogo source={logo} resizeMode="contain" />
-      <Title>RNStore</Title>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.openDrawer();
+        }}
+        testID="menu">
+        <Icon name="menu" size={32} color={appTheme?.colors.text} />
+      </TouchableOpacity>
+      <Icon name="diamond" size={32} color={appTheme?.colors.text} />
       <ThemeToggler />
     </HeaderContainer>
   );

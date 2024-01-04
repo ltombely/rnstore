@@ -10,10 +10,10 @@ export default function App() {
   const theme = useAppStore(state => state.theme);
 
   return (
-    <NavigationContainer>
-      <ThemeProvider theme={theme === 'dark' ? dark : light}>
+    <ThemeProvider theme={theme === 'dark' ? dark : light}>
+      <NavigationContainer>
         <Router />
-      </ThemeProvider>
-    </NavigationContainer>
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }

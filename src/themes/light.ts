@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components';
-
 export default {
   title: 'light',
 
@@ -16,7 +14,7 @@ export default {
     error: '#FF5252', // Red 500
     info: '#2196F3', // Blue 500
     neutral: '#9E9E9E', // Gray 500
-    disabled: '#CCCCCC', // Light Gray 
+    disabled: '#CCCCCC', // Light Gray
     selected: 'rgba(255, 255, 255, 0.7)', // Low Opacity White
   },
   spacing: {
@@ -34,4 +32,41 @@ export default {
     lg: '18px', // Large
     xlg: '24px', // Extra Large
   },
-} as DefaultTheme;
+} as TTheme
+
+export type TTheme = {
+  title: string;
+
+  colors: {
+    primary: string;
+    secondary: string;
+    background: string;
+    accent: string;
+    highlight: string;
+
+    text: string;
+    success: string;
+    warn: string;
+    error: string;
+    info: string;
+    neutral: string;
+    disabled: string
+    selected: string
+  };
+
+  spacing: {
+    xsm: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xlg: string;
+  };
+
+  fontSize: {
+    xsm: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xlg: string;
+  };
+}
